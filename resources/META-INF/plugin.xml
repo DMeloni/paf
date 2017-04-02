@@ -1,0 +1,32 @@
+<idea-plugin>
+  <id>com.dmeloni.plugin.formatter</id>
+  <name>Phpstorm Additional Formatter</name>
+  <version>1.0</version>
+  <vendor email="denis.meloni@gmail.com" url="http://github.com/DMeloni/phpstorm-formatter">DMeloni</vendor>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <description><![CDATA[
+      Use the main formatter with additionnal rules.<br>
+      <em>Add a new empty line before if/foreach/while/do/switch when it is possible</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First version.<br>
+      <em>Add empty line before if/foreach/while/do/switch statement if the previous line is terminated by a semicolon character.</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <extensions defaultExtensionNs="com.intellij"></extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <group id="PluginFormatter.SampleMenu" text="_" description="">
+      <add-to-group group-id="CodeFormatGroup" anchor="last"  />
+      <action id="PluginFormatter.ReformatAction" class="com.dmeloni.plugin.formatter.ReformatAction" text="Reformat the code" description="Use PhpStorm formatter + additional rules" />
+    </group>
+  </actions>
+</idea-plugin>
